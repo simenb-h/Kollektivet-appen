@@ -17,13 +17,53 @@
       <tr>
         <th scope="row">1</th>
         <td>Simen</td>
-        <td>Gulv</td>
-        <td>No</td>
+        <td id="simen">gulv</td>
+        <td><button onclick="myFunction('simen')">Click Me</button></td>
       </tr>
+
+      <tr>
+        <th scope="row">2</th>
+        <td>Stian</td>
+        <td id="stian">kjøkken</td>
+        <td><button onclick="myFunction('stian')">Click Me</button></td>
+      </tr>
+
+      <tr>
+        <th scope="row">3</th>
+        <td>Sigmund</td>
+        <td id="sigmund">bad</td>
+        <td><button onclick="myFunction('sigmund')">Click Me</button></td>
+        <td></td>
+
+      </tr>
+
+
+      
 
     </tbody>
   </table>
 
+  <script>
+    function myFunction(person) {
+      var x = document.getElementById(person);
+      if (x.innerHTML === "gulv") {
+        x.innerHTML = "bad";
+      }
+      else if (x.innerHTML === "bad") {
+        x.innerHTML = "kjøkken"
+      }
+      else if (x.innerHTML === "kjøkken") {
+        x.innerHTML = "gulv"
+      }
+      else {
+        x.innerHTML = "kjøkken";
+      }
+
+    }
+
+ 
+
+  </script>
 
 
 
