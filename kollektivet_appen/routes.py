@@ -6,18 +6,21 @@ from kollektivet_appen import app, db, weeknr
 def home():
     cleaninglist = weeknr.thisweek()
     week = weeknr.getWeek()
-    return render_template('cleaning.html', cleaninglist=cleaninglist, week=week)
+    label = 'Current Week: '
+    return render_template('cleaning.html',label=label, cleaninglist=cleaninglist, week=week)
 
 @app.route("/home/lastweek", methods = ['GET','POST'])
 def lastweek():
     cleaninglist = weeknr.lastweek()
     week = weeknr.getWeek()-1
     moving = 'back'
-    return render_template('cleaning.html', cleaninglist=cleaninglist, week=week, moving=moving)
+    label = 'Last Week:'
+    return render_template('cleaning.html', cleaninglist=cleaninglist, label=label, week=week, moving=moving)
 
 @app.route("/home/nextweek", methods = ['GET','POST'])
 def nextweek():
     cleaninglist = weeknr.lastweek()
     week = weeknr.getWeek()+1
     moving = 'forward'
-    return render_template('cleaning.html', cleaninglist=cleaninglist, week=week, moving=moving)
+    label = 'Next Week:'
+    return render_template('cleaning.html', cleaninglist=cleaninglist, label=label, week=week, moving=moving)
