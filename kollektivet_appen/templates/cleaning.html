@@ -1,0 +1,16 @@
+  
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+
+<h1>Week: {{week}}</h1>
+
+{% for cleaning in cleaninglist %}
+<h3>{{cleaning}}</h3>
+
+{% endfor %}
+
+
+{% endblock content %}
