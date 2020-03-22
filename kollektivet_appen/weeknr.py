@@ -1,7 +1,7 @@
 import datetime
 
 cleaners = ['Simen', 'Stian', 'Sigmund']
-tasks = ['gulv', 'bad', 'kjøkken' ]
+tasks = ['gulv', 'kjøkken', 'bad' ]
 index = [0,1,2,0,1,2]
 
 def getWeek():
