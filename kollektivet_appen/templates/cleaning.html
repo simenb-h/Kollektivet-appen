@@ -15,4 +15,13 @@
 {% endfor %}
 
 
+{% if not moving %}
+<a class="btn btn-primary" href="{{ url_for('lastweek') }}">Last week</a>
+<a class="btn btn-primary" href="{{ url_for('nextweek') }}">Next week</a>
+{% else %}
+<a class="btn btn-primary" href="{{ url_for('home') }}">Back</a>
+{% endif %}
+
+
+
 {% endblock content %}

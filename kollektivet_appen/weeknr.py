@@ -11,8 +11,8 @@ def getWeek():
     #return datetime.date(2020, 4, 7).isocalendar()[1] # three weeks
 
 
-def get_index():
-    week = getWeek()
+def get_index(week):
+    #week = getWeek()
 
     if (week % 3 == 0):
         i = 0
@@ -22,8 +22,8 @@ def get_index():
         i = 2
     return i
 
-def getCleaninglist():
-    i = get_index()
+def getCleaninglist(i):
+    #i = get_index()
     thisweek = []     
     en = index[i]
     to = index[i+1]
@@ -31,3 +31,18 @@ def getCleaninglist():
     thisweek = [cleaners[0] + " skal vaske " + tasks[en], cleaners[1] + " skal vaske " + tasks[to], cleaners[2] + " skal vaske " + tasks[tre]]
     return thisweek
 
+def lastweek():
+    w = getWeek()-1
+    i = get_index(w)
+    return getCleaninglist(i)
+
+def thisweek():
+    w = getWeek()
+    i = get_index(w)
+    return getCleaninglist(i)
+
+def nextweek():
+    w = getWeek()+1
+    i = get_index(w)
+    return getCleaninglist(i)
+    
