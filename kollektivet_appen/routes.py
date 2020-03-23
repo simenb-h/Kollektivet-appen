@@ -19,8 +19,10 @@ def lastweek():
 
 @app.route("/home/nextweek", methods = ['GET','POST'])
 def nextweek():
-    cleaninglist = weeknr.lastweek()
+    cleaninglist = weeknr.nextweek()
     week = weeknr.getWeek()+1
     moving = 'forward'
     label = 'Next Week:'
     return render_template('cleaning.html', cleaninglist=cleaninglist, label=label, week=week, moving=moving)
+
+    
